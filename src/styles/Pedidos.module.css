@@ -1,0 +1,121 @@
+.container {
+  /* Centraliza o conteúdo e limita sua largura em telas maiores. */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.h2 {
+  /* Mantém o título legível em diferentes tamanhos de tela. */
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  text-align: left;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #d3d3d3;
+  padding-bottom: 0.5rem;
+  color: #333;
+}
+
+.pedidos {
+  /* Ocupa a largura disponível para exibir a lista de pedidos. */
+  width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.p {
+  /* Estilo de mensagens informativas, como uma lista vazia. */
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.lista {
+  /* Remove a aparência padrão da lista. */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.item {
+  /* Exibe cada pedido em um cartão com leve destaque ao passar o mouse. */
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+}
+
+.quantidadeControls {
+  /* Agrupa os botões de controle de quantidade e o valor atual. */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  border-radius: 25px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+}
+
+.adicionarButton,
+.retirarButton {
+  /* Botões de controle de quantidade com estilo consistente. */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.total {
+  /* Destaca o total acumulado dos pedidos. */
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  text-align: right;
+  color: #111;
+  font-weight: bold;
+}
+
+/* Reduz espaçamentos e texto em telas estreitas. */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .item {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .total {
+    font-size: 1rem;
+  }
+}

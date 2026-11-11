@@ -3,14 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3002",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "@module-federation/nextjs-mf": "8.8.6",
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "webpack": "5.91.0"
+  },
+  "overrides": {
+    "enhanced-resolve": "5.20.1"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3"
   }
 }
